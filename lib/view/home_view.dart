@@ -30,10 +30,13 @@ class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: const Key('scaffold'),
       appBar: AppBar(
+        key: const Key('todo'),
         title: const Text('Todo List'),
       ),
       body: ListView.builder(
+          key: const Key('listview'),
           itemCount: listData.length,
           itemBuilder: (context, index) {
             return DisableTextWidget(
@@ -42,6 +45,7 @@ class _HomeViewState extends State<HomeView> {
             );
           }),
       floatingActionButton: FloatingActionButton(
+        key: const Key('addButton'),
         onPressed: () {
           showDialog(
               context: context,

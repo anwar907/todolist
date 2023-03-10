@@ -15,16 +15,17 @@ class _DisableTextWidgetState extends State<DisableTextWidget> {
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      key: const Key('litTile'),
       onTap: () {
         setState(() {
           setLine = !setLine;
         });
       },
-      title: Text(widget.todo?.title ?? '',
+      title: Text(
+          key: const Key('title'),
+          widget.todo?.title ?? '',
           style: const TextStyle().styledText(setLine)),
       leading: Container().decorationStyle(widget.todo!.avatar),
     );
   }
 }
-
-
